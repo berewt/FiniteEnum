@@ -1,0 +1,11 @@
+package finite_enum
+
+brief = "Enumerate finite set of values of a type"
+version = 0.1.0
+
+author = Nicolas Biri <nicolas@biri.name>
+maintainer = Nicolas Biri <nicolas@biri.name>
+
+sourcedir = src
+
+modules = Data.FiniteEnum
