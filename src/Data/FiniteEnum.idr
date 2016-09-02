@@ -11,11 +11,29 @@ export
 enumerateIso : (prf : Iso a (Fin card)) -> Vect card a
 enumerateIso (MkIso to from toFrom fromTo) = map from range
 
+public export
 interface FinEnum a (n : Nat) | a where
   finIso : Iso a (Fin n)
 
+export
 enumerate : FinEnum a n => Vect n a
 enumerate = enumerateIso finIso
+
+export
+fromFinIso : (prf : Iso a (Fin card)) -> Fin card -> a
+fromFinIso (MkIso to from toFrom fromTo) = from
+
+export
+fromFin : FinEnum a n => Fin n -> a
+fromFin = fromFinIso finIso
+
+export
+toFinIso : (prf : Iso a (Fin card)) -> a -> Fin card
+toFinIso (MkIso to from toFrom fromTo) = to
+
+export
+toFin : FinEnum a n => a -> Fin n
+toFin = toFinIso finIso
 
 -- FinEnum 1 Unit
 
