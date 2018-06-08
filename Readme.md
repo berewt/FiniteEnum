@@ -10,3 +10,12 @@ Example:
 *src/Data/FiniteEnum> the (Vect _ (Maybe Bool)) enumerate
 [Nothing, Just False, Just True] : Vect 3 (Maybe Bool)
 ```
+
+Thanks to the isomorphism with `Fin`, we can also _derive_ instances for many interfaces:
+
+- `DecEq` (name of the instance" `finEnumDecEq`);
+- `Eq` (name of the instance" `finEnumEq`);
+- `Ord` (name of the instance" `finEnumOrd`);
+- `MinBound` (name of the instance" `finEnumMinBound`);
+- `MaxBound` (name of the instance" `finEnumMaxBound`);
+- `Enum` (name of the instance" `finEnumEnum`).
